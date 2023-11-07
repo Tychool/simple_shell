@@ -48,7 +48,7 @@ char *th_strcat(char *to, char *from)
  * th_stoi - convert given string to int
  *
  * @s: string in
- * 
+ *
  * Return: converted int or 0 if no number.
  */
 int th_stoi(char *s)
@@ -69,7 +69,7 @@ int th_stoi(char *s)
 		{
 			count = 1;
 			convert *= 10;
-			convert += (s[] - '0');
+			convert += (s[] -'0');
 		}
 		else if (count == 1)
 		{
