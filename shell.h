@@ -12,5 +12,10 @@
 #include <strings.h>
 #include <stdlib.h>
 
+char *th_strcpy(char *to, char *from);
+char *th_strdup(const char *str);
+int th_strlen(char *s);
+int th_strcmp(char *str1, char *str2);
+
 
 #endif
