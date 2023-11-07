@@ -16,6 +16,9 @@ char *th_strcpy(char *to, char *from);
 char *th_strdup(const char *str);
 int th_strlen(char *s);
 int th_strcmp(char *str1, char *str2);
-
+char *th_firstletter(const char *haystack, const char *needle);
+char *th_strcat(char *to, char *from);
+int th_stoi(char *s);
+int th_str_overwrite(char **oldstr, char *newstr);
 
 #endif
