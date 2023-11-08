@@ -10,16 +10,14 @@ char *th_strcpy(char *to, char *from)
 {
 	int i = 0;
 
-	if (to == from || from == 0)
+	if (to == from || from == NULL)
 	{
 		return (to);
 	}
-	while (from[i])
+	while ((to[i] = from[i]) != '\0')
 	{
-		to[i] = from[i];
 		i++;
 	}
-	to[i] = 0;
 	return (to);
 }
 
@@ -32,22 +30,27 @@ char *th_strcpy(char *to, char *from)
  */
 char *th_strdup(const char *str)
 {
-	int s_len = 0;
-	char *dup;
-
 	if (str == NULL)
 	{
 		return (NULL);
 	}
+	
+	int s_len = 0;
+
 	while (*str++)
 	{
 		s_len++;
 	}
 	/*malloc for duplicate (dup)*/
-	dup = malloc(sizeof(char) * (s_len + 1));
+	char *dup = malloc(sizeof(char) * (s_len + 1));
 	/*check if malloc fails*/
-	if (!dup)
+	if (dup == NULL)
+	{
 		return (NULL);
+	}
+
+	/*copy string in reverse order*/
+
 	for (s_len++; s_len--;)
 	{
 		dup[s_len] = *--str;
@@ -63,13 +66,13 @@ char *th_strdup(const char *str)
  */
 int th_strlen(char *s)
 {
-	int i = 0;
-
-	if (!s)
+	if (s == NULL)
 	{
 		return (0);
 	}
-	while (*s++)
+
+	int i = 0;
+	while (s[i] != '\0')
 	{
 		i++;
 	}
@@ -92,16 +95,9 @@ int th_strcmp(char *str1, char *str2)
 		if (*str1 != *str2)
 		{
 			return (*str1 - *str2);
-			str1++;
-			str2++;
 		}
+		str1++;
+		str2++;
 	}
-	if (*str1 == *str2)
-	{
-		return (0);
-	}
-	else
-	{
-		return (*str1 < *str2 ? -1 : 1);
-	}
+	return (*str1 - *str2);
 }
