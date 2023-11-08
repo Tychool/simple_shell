@@ -171,5 +171,4 @@ char **th_tok_strtowd(char *st, char del_st)
 	words[word_index] = NULL;
 
 	return (words);
-
 }
