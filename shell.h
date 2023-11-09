@@ -12,6 +12,10 @@
 #include <strings.h>
 #include <stdlib.h>
 
+#define READ_BUFFER 2048
+#define WRITE_BUFFER 2048
+#define FREE_BUFFER 0
+
 char *th_strcpy(char *to, char *from);
 char *th_strdup(const char *str);
 int th_strlen(char *s);
