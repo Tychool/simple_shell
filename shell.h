@@ -24,5 +24,12 @@ char *th_firstletter(const char *haystack, const char *needle);
 char *th_strcat(char *to, char *from);
 int th_stoi(char *s);
 int th_str_overwrite(char **oldstr, char *newstr);
+int th_is_inter(data_t *data);
+char **th_tok_strtow(char *st, char *del_st);
+char **th_tok_strtowd(char *st, char del_st);
+int th_freeptr(void **ptr);
+char *_memset(char *s, char bb, unsigned int n);
+void th_freesos(char **p);
+void *th_realloc(coid *ptr, unsigned int old, unsigned int new);
 
 #endif
