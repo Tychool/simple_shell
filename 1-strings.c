@@ -53,19 +53,19 @@ char *th_strcat(char *to, char *from)
  */
 int th_stoi(char *s)
 {
-	int i; /*index*/
+	int i = 0; /*index*/
 	int sign = 1;
 	int count = 0; /*counting flag*/
 	int out; /*output*/
-	unsigned int convert; /*the result*/
+	unsigned int convert = 0; /*the result*/
 
-	for (i = 0; s[i] != '\0' && count != 2; i++)
+	while (s[i] != '\0' && count != 2)
 	{
 		if (s[i] == '-')
 		{
 			sign *= -1;
 		}
-		if (s[i] >= '0' && s[i] <= '9')
+		else if (s[i] >= '0' && s[i] <= '9')
 		{
 			count = 1;
 			convert *= 10;
@@ -75,7 +75,9 @@ int th_stoi(char *s)
 		{
 			count = 2;
 		}
+		i++;
 	}
+
 	if (sign == -1)
 	{
 		out = -convert;

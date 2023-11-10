@@ -16,6 +16,12 @@
 #define WRITE_BUFFER 2048
 #define FREE_BUFFER 0
 
+
+/*STRUCTS*/
+
+
+/*PROTOTYPES*/
+
 char *th_strcpy(char *to, char *from);
 char *th_strdup(const char *str);
 int th_strlen(char *s);
@@ -30,6 +36,6 @@ char **th_tok_strtowd(char *st, char del_st);
 int th_freeptr(void **ptr);
 char *_memset(char *s, char bb, unsigned int n);
 void th_freesos(char **p);
-void *th_realloc(coid *ptr, unsigned int old, unsigned int new);
+void *th_realloc(void *ptr, unsigned int old, unsigned int _new);
 
 #endif

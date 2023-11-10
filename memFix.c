@@ -25,13 +25,13 @@ int th_freeptr(void **ptr)
  * @n: number of byte to fill
  *  Return: pointer to the filled memory area
  */
-char *_memset(char *s, char bb, unsigned int n)
+char *_memset(char *s, char bytes, unsigned int n)
 {
 	unsigned int indx;
 
 	for (indx = 0; indx < n; indx++)
 	{
-		s[i] = bb;
+		s[indx] bytes;
 	}
 	return (s);
 }
@@ -43,17 +43,17 @@ char *_memset(char *s, char bb, unsigned int n)
  *
  * Return: void
  */
-void th_freesos(char **p)
+void th_freesos(char **pstr)
 {
-	char **aos = pp;
+	char **aos = pstr;
 
-	if (pp == NULL)
+	if (pstr == NULL)
 	{
 		return;
 	}
-	while (*pp)
+	while (*pstr)
 	{
-		free(*pp++);
+		free(*pstr++);
 	}
 	free(aos);
 }
@@ -63,23 +63,23 @@ void th_freesos(char **p)
  *
  * @ptr: pointer to old malloc'd mem block
  * @old: size of old mem
- * @new: size of new mem
+ * @_new: size of new mem
  *
  * Return: pointer to the reallocated mem block
  */
-void *th_realloc(coid *ptr, unsigned int old, unsigned int new)
+void *th_realloc(void *ptr, unsigned int old, unsigned int _new)
 {
 	if (ptr == NULL)
-		return (malloc(new));
-	if (new == NULL)
+		return (malloc(_new));
+	if (_new == NULL)
 		return (free(ptr), NULL);
-	if (new == old)
+	if (_new == old)
 		return (ptr);
-	char *mem = malloc(new);
+	char *mem = malloc(_new);
 	if (mem == NULL)
 		return (NULL);
 
-	old = old < new ? old : new;
+	old = old < _new ? old : _new;
 
 	while (old--)
 	{

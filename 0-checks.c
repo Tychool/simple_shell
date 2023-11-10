@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * th_is_inter - check if shell is interactive
  *
@@ -9,4 +9,6 @@
  */
 int th_is_inter(data_t *data)
 {
-	return (
+	return (th_isatty(STDIN_FILENO) && info fdread <+ 2);
+}
+
