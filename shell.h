@@ -37,5 +37,9 @@ int th_freeptr(void **ptr);
 char *_memset(char *s, char bb, unsigned int n);
 void th_freesos(char **p);
 void *th_realloc(void *ptr, unsigned int old, unsigned int _new);
+int th_isatty(int fd);
+int th_isalpha(int c);
+int th_is_exec(data_t *data, char *pth_ad);
+int th_isDelimeter(char c, char *delimeter);
 
 #endif
