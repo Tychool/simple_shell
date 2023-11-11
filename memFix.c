@@ -31,7 +31,7 @@ char *_memset(char *s, char bytes, unsigned int n)
 
 	for (indx = 0; indx < n; indx++)
 	{
-		s[indx] bytes;
+		s[indx] = bytes;
 	}
 	return (s);
 }
@@ -71,7 +71,7 @@ void *th_realloc(void *ptr, unsigned int old, unsigned int _new)
 {
 	if (ptr == NULL)
 		return (malloc(_new));
-	if (_new == NULL)
+	if (!_new)
 		return (free(ptr), NULL);
 	if (_new == old)
 		return (ptr);
