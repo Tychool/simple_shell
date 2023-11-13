@@ -16,7 +16,7 @@ char *th_itoa(long int nn, int base, int line)
 	/*Buffer to store the converted string*/
 	static char buffer[50];
 	char *result = buffer;/*Pointer to the result string*/
-	char sign = 0;/*Sign indicator*/
+	/*char sign = 0;*//*Sign indicator*/
 	unsigned long n = (nn < 0 && !(line & CONV_UNSGND)) ? -nn : nn;
 	/*Choose the appropriate array of digits based on the lowercase flag*/
 	const char *array = (line & CONV_LCASE) ? digits_lower : digits_upper;
@@ -29,7 +29,7 @@ char *th_itoa(long int nn, int base, int line)
 		n = n / base;
 	} while (n != 0);
 	/*Add sign if the number is negative and not an unsigned conversion*/
-	if (nn < 0 && !(line & conv_UNSGND))
+	if (nn < 0 && !(line & CONV_UNSGND))
 		*--result = '-';
 	return (result);
 }

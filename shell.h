@@ -14,7 +14,11 @@
 
 #define READ_BUFFER 512
 #define WRITE_BUFFER 512
-#define FREE_BUFFER 0
+#define FREE_BUFFER -1
+#define CONV_LCASE 0x01
+#define CONV_UNSGND 0x02
+
+
 
 
 /**
