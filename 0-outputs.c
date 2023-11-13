@@ -103,4 +103,3 @@ int th_putsfile_d(char *str, int file_d)
 	}
 	return (indx);
 }
-
