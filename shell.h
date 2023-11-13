@@ -151,10 +151,15 @@ int th_isalpha(int c);
 int th_is_exec(data_t *data, char *pth_ad);
 int th_isDelimeter(char c, char *delimeter);
 int th_putchar(char c);
+void th_puts(char *str);
 int th_erroutc(char c);
 void th_errouts(char *str);
-
+int th_err_atoi(char *s);
 int th_pdec(int in, int file_d);
+int th_putfile_d(char c, int file_d);
+int th_pdec(int in, int file_d);
+int th_putsfile_d(char *str, int file_d);
+
 
 
 #endif
