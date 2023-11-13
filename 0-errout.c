@@ -1,4 +1,4 @@
-#include "shel.h"
+#include "shell.h"
 
 /**
  * th_errooutc - write char c to standard error
@@ -44,7 +44,7 @@ void th_errouts(char *str)
 
 	while (str[indx] != '\0')
 	{
-		th_erroutsc(str[indx]);
+		th_erroutc(str[indx]);
 		indx++;
 	}
 }
@@ -78,17 +78,17 @@ int th_err_atoi(char *s)
 
 	for (indx = 0; s[indx] != '\0'; indx++)
 	{
-		if (s[indx] >= '0' && s[indx] < 10)
+		if (s[indx] >= '0' && s[indx] <= 9)
 		{
-			res *= 10;
-			res += (s[indx] - '0');
+			res = res * 10;
+			res = res + (s[indx] - '0');
 		}
-		/*check overflow*/
-		if ((sign == 1 && res > INT_MAX) || (sign == -1 && res < INT_MIN))
+		else
 		{
 			return (INT_MIN);
 		}
-		else
+		/*check overflow*/
+		if ((sign == 1 && res > (unsigned long int)INT_MAX) || (sign == -1 && res < (unsigned long int)INT_MIN + 1))
 		{
 			return (INT_MIN);
 		}
@@ -97,14 +97,14 @@ int th_err_atoi(char *s)
 }
 
 /**
- * th_print2fd - print int to fd
+ * th_pdec - print int to fd
  *
  * @in: input
  * @file_d: fd
  *
  * Return: count of printed characters
  */
-int th_print2fd(int in, int file_d)
+int th_pdec(int in, int file_d)
 {
 	int indx = 0;
 	int (*_putchar)(char) = th_putchar;
@@ -146,21 +146,3 @@ int th_print2fd(int in, int file_d)
 	}
 	return (indx);
 }
-
-/**
- * th_perror - print error mesage apropriately
- *
- * @data: data in (struct)
- * errmsg: error message (strings)
- */
-void th_perror(data_t *data, char *errmsg)
-{
-	if (data == NULL || errmsg == NULL)
-	{
-		return;
-	}
-	
-	th_errouts(data->name);
-	th_errouts(":");
-	pri
-	th_errouts(data->err_index)

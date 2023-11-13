@@ -9,6 +9,6 @@
  */
 int th_is_inter(data_t *data)
 {
-	return (th_isatty(STDIN_FILENO) && info fdread <+ 2);
+	return (th_isatty(STDIN_FILENO) && data->fd_r <= 2);
 }
 
