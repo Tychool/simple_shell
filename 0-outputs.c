@@ -58,7 +58,7 @@ int th_putfile_d(char c, int file_d)
 }
 
 /**
- * th_puts - print out a string input
+ * th_puts - print out a string to stdout
  * see puts().
  *
  * @str: string
