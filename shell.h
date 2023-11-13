@@ -91,7 +91,7 @@ typedef struct th_data_pass
 	int his_line;
 	/*ENVIROMENTS*/
 	int env_ch;
-	char **env_mod
+	char **env_mod;
 	list_t *env_cp;
 	list_t *alias;
 	/*COMMANDS*/
@@ -103,8 +103,7 @@ typedef struct th_data_pass
 } data_t;
 
 #define INIT_DATA_T \
-	(data_t)
-{
+	(data_t){\
 	.arg_count = 0, \
 	.arguments = NULL, \
 	.arg_vector = NULL, \
@@ -129,7 +128,7 @@ typedef struct builtin
 {
 	char *t;
 	int (*f)(data_t *);
-} inbuilt_t
+} inbuilt_t;
 /*PROTOTYPES*/
 
 char *th_strcpy(char *to, char *from);
@@ -140,7 +139,7 @@ char *th_firstletter(const char *haystack, const char *needle);
 char *th_strcat(char *to, char *from);
 int th_stoi(char *s);
 int th_str_overwrite(char **oldstr, char *newstr);
-/*t th_is_inter(data_t *data);*/
+int th_is_inter(data_t *data);
 char **th_tok_strtow(char *st, char *del_st);
 char **th_tok_strtowd(char *st, char del_st);
 int th_freeptr(void **ptr);
@@ -151,5 +150,11 @@ int th_isatty(int fd);
 int th_isalpha(int c);
 int th_is_exec(data_t *data, char *pth_ad);
 int th_isDelimeter(char c, char *delimeter);
+int th_putchar(char c);
+int th_erroutc(char c);
+void th_errouts(char *str);
+
+int th_pdec(int in, int file_d);
+
 
 #endif

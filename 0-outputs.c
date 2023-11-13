@@ -66,15 +66,13 @@ int th_putfile_d(char c, int file_d)
  */
 void th_puts(char *str)
 {
-	int indx = 0;
-
 	if (str == NULL || *str == '\0')
 	{
 		return;
 	}
 	for (; *str != '\0'; str++)
 	{
-		th_putchar(*str)
+		th_putchar(*str);
 	}
 }
 
