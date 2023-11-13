@@ -33,3 +33,26 @@ char *th_itoa(long int nn, int base, int line)
 		*--result = '-';
 	return (result);
 }
+
+/**
+ * th_nocomments - remove comments
+ *
+ * @arrys: strings
+ *
+ * Return: nothing
+ */
+void th_nocomments(char *arrays)
+{
+	if (arrays == NULL || *arrays == '\0')
+	{
+		return;
+	}
+
+	for (int i = 0; arrays[i] != '\0' && !(arrays[i] == '#' && (i == 0 || arrays[i - 1] == ' ')); i++)
+	{
+		if (arrays[i] == '#' && (i == 0 || arrays[i - 1] == ' '))
+		{
+			arrays[i] = '\0';
+		}
+	}
+}
