@@ -15,8 +15,15 @@
 #define READ_BUFFER 512
 #define WRITE_BUFFER 512
 #define FREE_BUFFER -1
+#define C_OR 0x01
+#define C_AND 0x02
+#define CH_CMD 0x03
+#define C_NORMAL 0x00
 #define CONV_LCASE 0x01
 #define CONV_UNSGND 0x02
+#define GET_LINE 0x00
+#define STR_TOK 0x00
+
 
 
 
