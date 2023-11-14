@@ -13,7 +13,7 @@ int th_isatty(int fd)
 }
 
 /**
- * th _isalpha - check for alphabet character
+ * th_isalpha - check for alphabet character
  * @c: char input
  * Return: 1 if true, 0 otherwise
  */

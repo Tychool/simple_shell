@@ -88,7 +88,8 @@ int th_err_atoi(char *s)
 			return (INT_MIN);
 		}
 		/*check overflow*/
-		if ((sign == 1 && res > (unsigned long int)INT_MAX) || (sign == -1 && res < (unsigned long int)INT_MIN + 1))
+		if ((sign == 1 && res > (unsigned long int)INT_MAX) ||
+				(sign == -1 && res < (unsigned long int)INT_MIN + 1))
 		{
 			return (INT_MIN);
 		}

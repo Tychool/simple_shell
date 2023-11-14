@@ -13,6 +13,7 @@ void th_perror(data_t *data, char *errmsg)
 		return;
 	}
 	char *name = data[0].name;
+
 	while (*name != '\0')
 	{
 		th_erroutc(*name);
@@ -25,6 +26,7 @@ void th_perror(data_t *data, char *errmsg)
 	/*prog name*/
 	th_erroutc(':');
 	char *prog_name = data[0].arg_vector[0];
+
 	while (*prog_name != '\0')
 	{
 		th_erroutc(*prog_name);
@@ -33,6 +35,7 @@ void th_perror(data_t *data, char *errmsg)
 	/*error*/
 	th_erroutc(':');
 	char *msg = errmsg;
+
 	while (*msg != '\0')
 	{
 		th_erroutc(*msg);

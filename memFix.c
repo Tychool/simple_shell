@@ -76,6 +76,7 @@ void *th_realloc(void *ptr, unsigned int old, unsigned int _new)
 	if (_new == old)
 		return (ptr);
 	char *mem = malloc(_new);
+
 	if (mem == NULL)
 		return (NULL);
 

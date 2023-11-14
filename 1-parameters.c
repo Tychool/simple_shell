@@ -24,7 +24,8 @@ int th_iscommand(data_t *data, char *pth_ad)
 {
 	struct stat cmd_st;
 
-	return (pth_ad == NULL || stat(pth_ad, &cmd_st) ? 0 : (cmd_st.st_mode & S_IFREG));
+	return (pth_ad == NULL || stat(pth_ad, &cmd_st)
+	? 0 : (cmd_st.st_mode & S_IFREG));
 }
 
 /**
@@ -76,7 +77,8 @@ int th_iscmd_c(data_t *data, char *arrays, size_t *current_index)
  * @start: egining of line
  * @alen: array lenght
  */
-void th_can_chcont(data_t *data, char *arrays, size_t *current_index, size_t start, size_t alen)
+void th_can_chcont(data_t *data, char *arrays,
+		size_t *current_index, size_t start, size_t alen)
 {
 	size_t current_position = *current_index;
 

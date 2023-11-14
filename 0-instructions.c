@@ -48,7 +48,8 @@ void th_nocomments(char *arrays)
 		return;
 	}
 
-	for (int i = 0; arrays[i] != '\0' && !(arrays[i] == '#' && (i == 0 || arrays[i - 1] == ' ')); i++)
+	for (int i = 0; arrays[i] != '\0' && !(arrays[i] == '#'
+	&& (i == 0 || arrays[i - 1] == ' ')); i++)
 	{
 		if (arrays[i] == '#' && (i == 0 || arrays[i - 1] == ' '))
 		{
