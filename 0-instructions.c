@@ -56,3 +56,33 @@ void th_nocomments(char *arrays)
 		}
 	}
 }
+
+/**
+ * th_aliasreplace - replace alias
+ *
+ * @data: data
+ *
+ * Return: 1
+ */
+int th_aliasreplace(data_t *data)
+{
+list_t *nd;
+int i;
+
+for (indx = 0; indx < 10; indx++)
+{
+	if (!(node = ndFirst(data->alias, data->arg_vector[0], '=')))
+	{
+		return (0);
+	}
+	free(data->arg_vector[0]);
+	data->arg_vector[0] = th_strdup(th_strchar(node->str, '=') + 1);
+
+	if (!data->arg_vector[0])
+
+	{
+		return (0);
+	}
+}
+return (1);
+}
