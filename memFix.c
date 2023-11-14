@@ -19,13 +19,13 @@ int th_freeptr(void **ptr)
 }
 
 /**
- * th_set_mem - set a memory block with a constant byte
+ * th_memset - set a memory block with a constant byte
  * @s: pointer to mem area
- * @b: amoubt of memory
+ * @bytes: amoubt of memory
  * @n: number of byte to fill
  *  Return: pointer to the filled memory area
  */
-char *_memset(char *s, char bytes, unsigned int n)
+char *th_memset(char *s, char bytes, unsigned int n)
 {
 	unsigned int indx;
 
@@ -39,7 +39,7 @@ char *_memset(char *s, char bytes, unsigned int n)
 /**
  * th_freesos - free an arary of strings
  *
- * @pp: array of strings
+ * @pstr: array of strings
  *
  * Return: void
  */

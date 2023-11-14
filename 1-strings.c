@@ -69,7 +69,7 @@ int th_stoi(char *s)
 		{
 			count = 1;
 			convert *= 10;
-			convert += (s[i] -'0');
+			convert += (s[i] - '0');
 		}
 		else if (count == 1)
 		{

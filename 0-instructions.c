@@ -37,7 +37,7 @@ char *th_itoa(long int nn, int base, int line)
 /**
  * th_nocomments - remove comments
  *
- * @arrys: strings
+ * @arrays: strings
  *
  * Return: nothing
  */

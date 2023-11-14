@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * th_errooutc - write char c to standard error
+ * th_erroutc - write char c to standard error
  *
  * @c: character
  *

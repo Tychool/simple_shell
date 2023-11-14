@@ -34,7 +34,7 @@ char *th_strdup(const char *str)
 	{
 		return (NULL);
 	}
-	
+
 	int s_len = 0;
 
 	while (*str++)

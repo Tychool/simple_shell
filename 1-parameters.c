@@ -20,7 +20,7 @@ int th_is_inter(data_t *data)
  *
  * Return: 1 if its a command, 0 if not
  */
-int th_command(data_t *data, char *pth_ad)
+int th_iscommand(data_t *data, char *pth_ad)
 {
 	struct stat cmd_st;
 
@@ -40,7 +40,8 @@ int th_iscmd_c(data_t *data, char *arrays, size_t *current_index)
 {
 	size_t current_position = *current_index;
 
-	/*Check for '||' or '&&' indicating logical OR or AND
+	/*
+	 * Check for '||' or '&&' indicating logical OR or AND
 	 * and set logic operator accordingly
 	 */
 	if ((arrays[current_position] == '|'
@@ -66,7 +67,8 @@ int th_iscmd_c(data_t *data, char *arrays, size_t *current_index)
 	*current_index = current_position;
 }
 
-/** th_can_chcont - check if a chan can be continued
+/**
+ * th_can_chcont - check if a chan can be continued
  *
  * @data: data
  * @arrays: character arrays

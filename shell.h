@@ -68,7 +68,7 @@ typedef struct th_lists
  * --------------------
  * @his: history
  * @his_line: line numbering for history
- * 
+ *
  * --------------------
  * ENVIROMENTS
  * --------------------

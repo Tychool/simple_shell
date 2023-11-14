@@ -4,7 +4,7 @@
  * Delimeters are ignored
  *
  * @st: string input
- * @del: string delimeter
+ * @del_st: string delimeter
  *
  * Return: pointer to an array of tok'ed strings
  * or return NULL if fail
@@ -116,7 +116,7 @@ char **th_tok_strtowd(char *st, char del_st)
 	{
 		if ((st[input_index] != del_st &&
 		st[input_index + 1] == del_st) ||
-		(st[input_index] != del_st && !st[input_index +1])
+		(st[input_index] != del_st && !st[input_index + 1])
 		|| st[input_index + 1] == del_st)
 		{
 			num_words++;

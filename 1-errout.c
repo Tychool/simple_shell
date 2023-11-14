@@ -4,7 +4,7 @@
  * th_perror - print error message accordingly
  *
  * @data: data in (struct)
- * errmsg: error message (strings)
+ * @errmsg: error message (strings)
  */
 void th_perror(data_t *data, char *errmsg)
 {

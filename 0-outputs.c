@@ -12,7 +12,7 @@ int th_putchar(char c)
 {
 	static int indx;
 	static char char_cue[WRITE_BUFFER];
-	
+
 	if (c == FREE_BUFFER || indx >= WRITE_BUFFER)
 	{
 		if (write(1, char_cue, indx) == -1)
@@ -39,7 +39,7 @@ int th_putchar(char c)
  */
 int th_putfile_d(char c, int file_d)
 {
-	static int indx = 0;
+	static int indx = 1;
 	static char fd_cue[WRITE_BUFFER];
 
 	if (c == FREE_BUFFER || indx >= WRITE_BUFFER)
@@ -81,6 +81,7 @@ void th_puts(char *str)
  *
  * @str: string
  * @file_d: file descriptor
+ * Return: Void.
  */
 int th_putsfile_d(char *str, int file_d)
 {
