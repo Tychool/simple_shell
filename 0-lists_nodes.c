@@ -11,9 +11,12 @@ size_t th_printls(const list_t *first)
 {
 	size_t indx = 0;
 
-	while (first)
+	while (first != NULL)
 	{
-		th_puts(first->str ? first->str : "Non found");
+		if (!first->str)
+			th_puts(first->str);
+		else
+			th_puts(NOT_FOUND_MSG);
 		th_puts("\n");
 		first = first->nxt;
 		indx++;
@@ -37,7 +40,7 @@ void th_freel(list_t *head_nd)
 
 	while (current_nd != NULL)
 	{
-		list_t *next_nd = current_nd->next_nd;
+		list_t *next_nd = current_nd->nxt;
 
 		free(current_nd->str);
 		free(current_nd);
@@ -87,43 +90,3 @@ int th_ndi_del(list_t **head_nd, unsigned int i)
 	return (0);
 }
 
-/**
- * th_nde_add - add a node at the end of a list
- * @head_nd:
- * @str: string
- * @nn: number
- *
- * Return: address of new node
- */
-list_t *th_nde_add(list_t **head_nd, const char *str, int nn)
-{
-	if (head == NULL)
-	{
-		return (NULL);
-	}
-	list_t *new = malloc(sizeof(list_t));
-	if (new == NULL)
-		return (NULL);
-	th_memset(new, 0, sizeof(list_t));
-	new->nn = nn;
-
-	if (str != NULL)
-	{
-		new->str = th_strdup(str);
-		if (!new->str)
-		{
-			free(new);
-			return (NULL);
-		}
-	}
-	if (*head_nd)
-	{
-		list_t *nd = head_nd;
-		while (nd->nxt)
-			nd = nd->nxt;
-		nd-nxt = new;
-	}
-	else
-		*head_nd = new;
-	return (new);
-}
