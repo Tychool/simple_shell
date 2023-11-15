@@ -154,7 +154,7 @@ int th_is_inter(data_t *data);
 char **th_tok_strtow(char *st, char *del_st);
 char **th_tok_strtowd(char *st, char del_st);
 int th_freeptr(void **ptr);
-char *_memset(char *s, char bb, unsigned int n);
+char *th_memset(char *s, char bb, unsigned int n);
 void th_freesos(char **p);
 void *th_realloc(void *ptr, unsigned int old, unsigned int _new);
 int th_isatty(int fd);
