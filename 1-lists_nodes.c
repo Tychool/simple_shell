@@ -81,5 +81,3 @@ size_t th_print_l(const list_t *first)
 	}
 	return (i);
 }
-
-

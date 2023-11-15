@@ -23,7 +23,7 @@ list_t *th_ndFirst(list_t *nd, char *pre, char ch)
  * @head_nd: head
  * Return: array of converted list
  */
-char **ltos(list_t *head_nd)
+char **th_ltos(list_t *head_nd)
 {
 	if (head_nd == NULL)
 		return (NULL);
