@@ -68,7 +68,7 @@ char *th_strncat(char *to, char *from, int n)
  * Return: Void
  */
 
-char *th_strchr(char *s, char c)
+char *th_strchar(char *s, char c)
 {
 	do 
 	{

@@ -174,7 +174,8 @@ int th_pdec(int in, int file_d);
 int th_putsfile_d(char *str, int file_d);
 char *th_strncpy(char *to, char *from, int n);
 char *th_strncat(char *to, char *from, int n);
-char *th_strchr(char *s, char c);
+char *th_strchar(char *s, char c);
+size_t th_llen(const list_t *first);
 
 
 
