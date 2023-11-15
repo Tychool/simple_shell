@@ -7,7 +7,7 @@
  *
  * Retutn: size of str in list
  */
-size_t *th_printls(const list_t *first)
+size_t th_printls(const list_t *first)
 {
 	size_t indx = 0;
 
@@ -29,9 +29,9 @@ size_t *th_printls(const list_t *first)
  * @head_nd: head node
  * Return: nothing
  */
-void th_freel(list_t *head_nd)
+void th_freel(list_t **head_nd)
 {
-	if (head_nd == NULL || *head_nd == '\0')
+	if (head_nd == NULL || *head_nd == NULL)
 	{
 		return;
 	}
@@ -63,6 +63,7 @@ int th_ndi_del(list_t **head_nd, unsigned int i)
 	{
 		return (0);
 	}
+
 	if (i == 0)
 	{
 		list_t *nd = *head_nd;
@@ -72,10 +73,10 @@ int th_ndi_del(list_t **head_nd, unsigned int i)
 		return (1);
 	}
 	list_t *prev = NULL;
-
-	for (list_t *current_nd = *head_nd, unsigned int indx = 0; current != NULL; current_nd = current_nd->nxt, indx++)
+	
+	for (list_t *current_nd = *head_nd; current_nd != NULL; current_nd = current_nd->nxt)
 	{
-		if (indx == i)
+		if (i == 0)
 		{
 			if (prev != NULL)
 			{
@@ -86,7 +87,7 @@ int th_ndi_del(list_t **head_nd, unsigned int i)
 			return (1);
 		}
 		prev = current_nd;
+		i--;
 	}
 	return (0);
 }
-
