@@ -70,9 +70,10 @@ char *th_strncat(char *to, char *from, int n)
 
 char *th_strchr(char *s, char c)
 {
-	do {
-		if (*s == c)
-			return (s);
+	do 
+	{
+	if (*s == c)
+	return (s);
 	} while (*s++ != '\0');
 	return (NULL);
 }
