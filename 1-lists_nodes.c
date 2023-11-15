@@ -74,7 +74,7 @@ size_t th_print_l(const list_t *first)
 {
 	for (size_t i = 0; first; i++, first = first->nxt)
 	{
-		th_puts(th_convn(first->, 10, 0));
+		th_puts(th_itoa(first->, 10, 0));
 		th_puts(": ");
 		(first->str != NULL) th_puts(firsy->str) : th_puts("Not found!");
 		th_puts("\n");

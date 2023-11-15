@@ -68,11 +68,11 @@ void th_nocomments(char *arrays)
 int th_aliasreplace(data_t *data)
 {
 list_t *nd;
-int i;
+int indx;
 
 for (indx = 0; indx < 10; indx++)
 {
-	if (!(node = ndFirst(data->alias, data->arg_vector[0], '=')))
+	if (!(nd = ndFirst(data->alias, data->arg_vector[0], '=')))
 	{
 		return (0);
 	}
