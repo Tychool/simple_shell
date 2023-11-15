@@ -7,7 +7,7 @@
  *
  * Retutn: size of str in list
  */
-size_t th_printls(const list_t *first)
+size_t *th_printls(const list_t *first)
 {
 	size_t indx = 0;
 
