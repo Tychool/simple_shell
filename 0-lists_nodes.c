@@ -74,7 +74,7 @@ int th_ndi_del(list_t **head_nd, unsigned int i)
 	}
 	list_t *prev = NULL;
 	
-	for (list_t *current_nd = *head_nd; current_nd != NULL; current_nd = current_nd->nxt)
+	for (list_t *current_nd = *head_nd; current_nd != NULL && i > 0; current_nd = current_nd->nxt, i--)
 	{
 		if (i == 0)
 		{
