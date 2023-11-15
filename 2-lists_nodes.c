@@ -29,10 +29,12 @@ char **th_ltos(list_t *head_nd)
 		return (NULL);
 
 	size_t size = th_llen(head_nd);
+
 	if (size == 0)
 		return (NULL);
 
 	char **strngs = malloc(sizeof(char *) * (size + 1));
+
 	if (strngs == NULL)
 		return (NULL);
 	size_t i;
@@ -41,7 +43,7 @@ char **th_ltos(list_t *head_nd)
 	{
 		strngs[i] = th_strcpy(malloc(th_strlen(head_nd->str) + 1),
 		head_nd->str);
-		
+
 		if (strngs[i] == NULL)
 		{
 			while (i > 0)
@@ -69,6 +71,7 @@ list_t *th_nde_add(list_t **head_nd, const char *str, int nn)
 		return (NULL);
 
 	list_t *new = malloc(sizeof(list_t));
+
 	if (new == NULL)
 		return (NULL);
 
@@ -86,6 +89,7 @@ list_t *th_nde_add(list_t **head_nd, const char *str, int nn)
 	if (*head_nd)
 	{
 		list_t *nd = *head_nd;
+
 		while (nd->nxt)
 			nd = nd->nxt;
 		nd->nxt = new;
@@ -107,6 +111,7 @@ list_t *th_ndb_add(list_t **head_nd, const char *str, int nn)
 	if (head_nd == NULL)
 		return (NULL);
 	list_t *new = malloc(sizeof(list_t));
+
 	if (new == NULL)
 		return (NULL);
 	th_memset((void *)new, 0, sizeof(list_t));

@@ -14,6 +14,7 @@ list_t *th_ndb_add(list_t head_nd, const char *str, int nn)
 	if (head_nd == NULL)
 		return (NULL);
 	list_t new = maloc(sizeof(list_t));
+
 	if (new_h == NULL)
 		return (NULL);
 	th_memset(new_h, 0, sizeof(list_t));
@@ -25,7 +26,7 @@ list_t *th_ndb_add(list_t head_nd, const char *str, int nn)
 		if (new_h->str == NULL)
 		{
 			free(new_h);
-			return(NULL);
+			return (NULL);
 		}
 	}
 	new_h-> = *head_nd;

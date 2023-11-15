@@ -5,7 +5,7 @@
  *
  * @first: head of the list
  *
- * Retutn: size of str in list
+ * Return: size of str in list
  */
 size_t th_printls(const list_t *first)
 {
@@ -73,8 +73,9 @@ int th_ndi_del(list_t **head_nd, unsigned int i)
 		return (1);
 	}
 	list_t *prev = NULL;
-	
-	for (list_t *current_nd = *head_nd; current_nd != NULL && i > 0; current_nd = current_nd->nxt, i--)
+
+	for (list_t *current_nd = *head_nd; current_nd != NULL && i > 0;
+			current_nd = current_nd->nxt, i--)
 	{
 		if (i == 0)
 		{
