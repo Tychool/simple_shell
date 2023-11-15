@@ -31,7 +31,7 @@ size_t *th_printls(const list_t *first)
  */
 void th_freel(list_t *head_nd)
 {
-	if (head_nd == NULL || *head_nd == NULL)
+	if (head_nd == NULL || *head_nd == '\0')
 	{
 		return;
 	}
