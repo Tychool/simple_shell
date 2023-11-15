@@ -170,6 +170,9 @@ int th_pdec(int in, int file_d);
 int th_putfile_d(char c, int file_d);
 int th_pdec(int in, int file_d);
 int th_putsfile_d(char *str, int file_d);
+char *th_strncpy(char *to, char *from, int n);
+char *th_strncat(char *to, char *from, int n);
+char *th_strchr(char *s, char c);
 
 
 
