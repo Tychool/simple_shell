@@ -7,7 +7,7 @@
  *
  * Retutn: size of str in list
  */
-size_t *th_printls(const list_t *first)
+size_t th_printls(const list_t *first)
 {
 	size_t indx = 0;
 
@@ -29,7 +29,7 @@ size_t *th_printls(const list_t *first)
  * @head_nd: head node
  * Return: nothing
  */
-void th_freel(list_t *head_nd)
+void th_freel(list_t **head_nd)
 {
 	if (head_nd == NULL || *head_nd == NULL)
 	{

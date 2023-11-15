@@ -39,7 +39,7 @@
 typedef struct th_lists
 {
 	int nn;
-	int str;
+	char *str;
 
 	struct th_lists *nxt;
 } list_t;
