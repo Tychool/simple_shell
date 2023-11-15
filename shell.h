@@ -176,6 +176,7 @@ char *th_strncpy(char *to, char *from, int n);
 char *th_strncat(char *to, char *from, int n);
 char *th_strchar(char *s, char c);
 size_t th_llen(const list_t *first);
+list_t *th_nde_add(list_t **head_nd, const char *str, int nn);
 
 
 
