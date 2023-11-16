@@ -76,3 +76,35 @@ char *th_strchr(char *s, char c)
 	} while (*s++ != '\0');
 	return (NULL);
 }
+
+/**
+ * th_str_cnt - count the strings
+ * @str: first string
+ * Return: Void
+ */
+size_t th_str_cnt(const char *str)
+{
+	size_t count = 0;
+	int in_word = 0;
+
+	if (str == NULL)
+	return (count);
+
+	while (*str != '\0')
+	{
+	if (*str == ' ' || *str == '\t' || *str == '\n')
+	in_word = 0;
+	else
+	{
+	if (in_word == 0)
+	{
+	count++;
+	in_word = 1;
+	}
+	}
+
+	str++;
+	}
+
+	return (count);
+}
