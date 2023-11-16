@@ -72,12 +72,12 @@ int indx;
 
 for (indx = 0; indx < 10; indx++)
 {
-	if (!(nd = ndFirst(data->alias, data->arg_vector[0], '=')))
+	if (!(nd = th_ndFirst(data->alias, data->arg_vector[0], '=')))
 	{
 		return (0);
 	}
 	free(data->arg_vector[0]);
-	data->arg_vector[0] = th_strdup(th_strchar(node->str, '=') + 1);
+	data->arg_vector[0] = th_strdup(th_strchar(nd->str, '=') + 1);
 
 	if (!data->arg_vector[0])
 
@@ -86,4 +86,42 @@ for (indx = 0; indx < 10; indx++)
 	}
 }
 return (1);
+}
+
+/**
+ * th_var_overwrite - replace a variable
+ * @data: data
+ * Return: same as prev func
+ */
+int th_var_overwrite(data_t *data)
+{
+	list_t *nd;
+	int i = 0;
+
+	while (data->arg_vector[i])
+	{
+		if (data->arg_vector[i][0] == '$' && data->arg_vector[i][1])
+		{
+			if (!th_strcmp(data->arg_vector[i], "$?"))
+			{
+				th_str_overwrite(&(data->arg_vector[i]),
+			th_strdup(th_itoa(data->cmd_stat, 10,0)));
+			}
+			else if (th_strcmp(data->arg_vector[i], "$$") == '\0')
+			{
+				th_str_overwrite(&(data->arg_vector[i]),
+				th_strdup(th_itoa(getpid(), 10,0)));
+			}
+			else if ((nd = th_ndFirst(data->env_cp,
+				&data->arg_vector[i][1], '=')))
+			{
+				th_str_overwrite(&(data->arg_vector[i]),
+				th_strdup(th_strchar(nd->str, '=')));
+			}
+			else
+			th_str_overwrite(&data->arg_vector[i], th_strdup(""));
+		}
+		i++;
+	}
+	return (0);
 }
