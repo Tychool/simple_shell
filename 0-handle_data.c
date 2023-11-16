@@ -15,7 +15,7 @@ void th_setdata(data_t *data, char **argv)
 		data->arg_vector = th_tok_strtow(data->arguments, TAB) ?:
 		(char *[]){th_strdup(data->arguments), NULL};
 
-		data->arg_count = data->arg_vector ? th_str_cnt(data->arg_vector) : 0;
+		data->arg_count = data->arg_vector ? th_str_cnt(data->arg_vector[0]) : 0;
 
 		if (data->arg_vector)
 		{

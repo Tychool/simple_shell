@@ -191,10 +191,11 @@ char **th_ltos(list_t *head_nd);
 int th_ndi_del(list_t **head_nd, unsigned int i);
 int th_set_env(data_t *data, char *variable, char *env_value);
 int th_env_fill(data_t *data);
-<<<<<<< HEAD
+int th_unset_env(data_t *data, char *variable);
+int th_env_del(data_t *data);
 size_t th_str_cnt(const char *str);
-=======
 
 void th_freel(list_t **head_nd);
->>>>>>> 928605d37c24a5c66556a4301d86470cfe7df9ef
+
+
 #endif
