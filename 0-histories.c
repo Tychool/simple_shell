@@ -33,7 +33,8 @@ char *history_file(data_t *data)
  *
  * @data: data
  * @arrays: arrays of history from file
- * lindex: index at a line
+ * @lindex: index at a line
+ * Return: Always 0.
  */
 int th_history_list(data_t *data, char *arrays, int lindex)
 {
@@ -41,12 +42,26 @@ int th_history_list(data_t *data, char *arrays, int lindex)
 
 	th_nde_add(&nd, arrays, lindex);
 
-	if(data->his == NULL)
+	if (data->his == NULL)
 		data->his = nd;
 	return (0);
 }
 
 /**
+ * th_history_index - index history list
+ * @data: data
+ * Return: index
+ */
+int th_history_index(data_t *data)
+{
+	int count = 0;
+
+	for (list_t *nd = data->his; nd; nd = nd->nxt)
+	:Wqnd->nn = count++;
+	return (data->his_line = count);
+}
+
+ /**
  * history_rd - read history file
  * @data: data
  * Return: history
