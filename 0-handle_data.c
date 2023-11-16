@@ -12,12 +12,12 @@ void th_setdata(data_t *data, char **argv)
 
 	if (data->arguments)
 	{
-		data->arg_vector = th_strtow(data->arguments, TAB) ?:
+		data->arg_vector = th_tok_strtow(data->arguments, TAB) ?:
 		(char *[]){th_strdup(data->arguments), NULL};
 
 		data->arg_count = data->arg_vector ? th_str_cnt(data->arg_vector) : 0;
 
-		if (info->argv)
+		if (data->arg_vector)
 		{
 			th_aliasreplace(data);
 			th_var_r(data);
@@ -30,9 +30,11 @@ void th_setdata(data_t *data, char **argv)
  * clear all
  * @data: info Pointer to the data_t struct to be initialized.
  */
-void th_cleardata(info_t *data)
+void th_cleardata(data_t *data)
 {
-	data->arguments = data->arg_vector = data->pth_ads = NULL;
+	data->arg_vector = NULL;
+	data->arguments = NULL;
+	data->pth_ad = NULL;
 	data->arg_count = 0;
 }
 
@@ -46,9 +48,9 @@ void th_freedata(data_t *data, int free_all)
 {
 	th_freesos(data->arg_vector);
 	data->arg_vector = NULL;
-	data->pth_ads = NULL;
+	data->pth_ad = NULL;
 
-	if (free_all != NULL)
+	if (free_all)
 	{
 		if (!data->cmd_buffer)
 			free(data->arguments);

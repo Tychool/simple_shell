@@ -17,6 +17,10 @@
 #define FREE_BUFFER -1
 
 #define NOT_FOUND_MSG "Not found"
+
+#define TAB "\t"
+
+#define ARG_ERROR0 "Argument not found \n"
 #define ARG_ERROR1 "Invalid number of arguments \n"
 
 
@@ -177,6 +181,8 @@ int th_putsfile_d(char *str, int file_d);
 char *th_strncpy(char *to, char *from, int n);
 char *th_strncat(char *to, char *from, int n);
 char *th_strchar(char *s, char c);
+int th_aliasreplace(data_t *data);
+int th_var_r(data_t *data);
 size_t th_llen(const list_t *first);
 size_t th_printls(const list_t *first);
 list_t *th_nde_add(list_t **head_nd, const char *str, int nn);
@@ -185,4 +191,6 @@ char **th_ltos(list_t *head_nd);
 int th_ndi_del(list_t **head_nd, unsigned int i);
 int th_set_env(data_t *data, char *variable, char *env_value);
 int th_env_fill(data_t *data);
+
+void th_freel(list_t **head_nd);
 #endif
