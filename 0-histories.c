@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * get_history_file - fetch history from a file path
+ * th_history_pth - fetch history from a file path
  * @data: data
  *
  * Return: history file
  */
-char *history_file(data_t *data)
+char *th_history_pth(data_t *data)
 {
-	char *folder = th_printenv(data, "HOME=");
+	char *folder = th_env_value(data, "HOME=");
 
 	if (folder == NULL)
 	return (NULL);
@@ -28,6 +28,8 @@ char *history_file(data_t *data)
 	th_strcat(arrays, H_PTH);
 
 	return (arrays);
+}
+
 /**
  * th_history_list - create a list of historie
  *
@@ -57,7 +59,7 @@ int th_history_index(data_t *data)
 	int count = 0;
 
 	for (list_t *nd = data->his; nd; nd = nd->nxt)
-	:Wqnd->nn = count++;
+	nd->nn = count++;
 	return (data->his_line = count);
 }
 
@@ -68,30 +70,29 @@ int th_history_index(data_t *data)
  */
 int history_rd(data_t *data)
 {
-	int line = 0;
+	int fd, end, line = 0;
 	char *arrays = NULL;
-	char *file = th_history_path(data);
+	char *file = th_history_pth(data);
+	size_t filesize;
 	struct stat st;
 
-	if (file == NULL || (fd = open(file, 0_RDONLY)) == -1)
+	if (file == NULL || (fd = open(file, O_RDONLY)) == -1)
 	{
-		return (free(file));
-		return (0);
+		return (free(file), 0);
 	}
 
 	free(file);
-	if (!fstat(fd, &st) || (fsize = st.st_size) < 2 || (arrays = malloc(fsize + 1)) == NULL)
+	if (!fstat(fd, &st) || (filesize = st.st_size) < 2 || (arrays = malloc(filesize + 1)) == NULL)
 		return (close(fd), 0);
-	ssize_t llen = read(fd, arrays, fsize);
+	ssize_t llen = read(fd, arrays, filesize);
 	close(fd);
 
 	if (llen <=0)
 	{
-		return (free(arrays));
-		return (0);
+		return (free(arrays), 0);
 	}
-	arrays[fsize] = 0;
-	for (int i = 0, end = 0; i < fsize; i++)
+	arrays[filesize] = 0;
+	for (int i = 0, end = 0; i < filesize; i++)
 	{
 		if (arrays[i] == '\n')
 		{
@@ -100,7 +101,7 @@ int history_rd(data_t *data)
 			end = i + 1;
 		}
 	}
-	if (end != fsize)
+	if (end != filesize)
 		th_history_list(data, arrays + end, line++);
 
 	free(arrays);

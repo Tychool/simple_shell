@@ -21,9 +21,10 @@
 #define TAB "\t"
 
 #define ARG_ERROR0 "Argument not found \n"
-#define ARG_ERROR1 "Invalid number of arguments \n"
+#define ARG_ERROR1 "Invalid number of arguments\n"
 
-
+#define H_PTH "shell_history"
+#define H_MAX 2048
 #define C_OR 0x01
 #define C_AND 0x02
 #define CH_CMD 0x03
@@ -189,15 +190,14 @@ list_t *th_nde_add(list_t **head_nd, const char *str, int nn);
 list_t *th_ndFirst(list_t *nd, char *pre, char ch);
 char **th_ltos(list_t *head_nd);
 int th_ndi_del(list_t **head_nd, unsigned int i);
+char **th_get_env(data_t *data);
+char *th_env_value(data_t *data, const char *var_name);
 int th_set_env(data_t *data, char *variable, char *env_value);
 int th_env_fill(data_t *data);
 int th_unset_env(data_t *data, char *variable);
 int th_env_del(data_t *data);
 size_t th_str_cnt(const char *str);
-<<<<<<< HEAD
-=======
 int th_history_list(data_t *data, char *arrays, int lindex);
->>>>>>> 0976ec2 (deb)
 void th_freel(list_t **head_nd);
 char *get_history_file(data_t *data);
 int th_history_index(data_t *data);
