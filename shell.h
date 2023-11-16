@@ -200,6 +200,6 @@ int th_history_list(data_t *data, char *arrays, int lindex);
 >>>>>>> 0976ec2 (deb)
 void th_freel(list_t **head_nd);
 char *get_history_file(data_t *data);
-
+int th_history_index(data_t *data);
 
 #endif
