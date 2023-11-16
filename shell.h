@@ -194,8 +194,8 @@ int th_env_fill(data_t *data);
 int th_unset_env(data_t *data, char *variable);
 int th_env_del(data_t *data);
 size_t th_str_cnt(const char *str);
-
 void th_freel(list_t **head_nd);
+char *get_history_file(data_t *data);
 
 
 #endif
