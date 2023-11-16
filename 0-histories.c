@@ -64,11 +64,11 @@ int th_history_index(data_t *data)
 }
 
  /**
- * history_rd - read history file
+ * th_history_rd - read history file
  * @data: data
  * Return: history
  */
-int history_rd(data_t *data)
+int th_history_rd(data_t *data)
 {
 	int fd, end, line = 0;
 	char *arrays = NULL;
