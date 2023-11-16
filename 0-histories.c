@@ -1,7 +1,6 @@
 #include "shell.h"
 
 /**
-<<<<<<< HEAD
  * get_history_file - fetch history from a file path
  * @data: data
  *
@@ -29,7 +28,7 @@ char *get_history_file(data_t *data)
 	th_strcat(arrays, H_PTH);
 
 	return (arrays);
-=======
+/**
  * th_history_list - create a list of historie
  *
  * @data: data
@@ -45,5 +44,4 @@ int th_history_list(data_t *data, char *arrays, int lindex)
 	if(data->his == NULL)
 		data->his = nd;
 	return (0);
->>>>>>> 0976ec2 (deb)
 }
