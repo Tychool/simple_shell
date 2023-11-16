@@ -185,4 +185,5 @@ char **th_ltos(list_t *head_nd);
 int th_ndi_del(list_t **head_nd, unsigned int i);
 int th_set_env(data_t *data, char *variable, char *env_value);
 int th_env_fill(data_t *data);
+size_t th_str_cnt(const char *str);
 #endif
