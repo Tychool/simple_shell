@@ -64,3 +64,41 @@ int th_ch_dir(data_t *data)
 	}
 	return (0);
 }
+
+/**
+ * th_exit - close the shell
+ *
+ * @data: data
+ * Return: 0
+ */
+int th_exit(data_t *data)
+{
+	if (data->arg_vector[1])
+	{
+		int check_exit = th_err_atoi(data->arg_vector[1]);
+
+		if (check_exit == -1)
+		{
+			data->cmd_stat = 2;
+			th_perror(data, EXIT_ERROR_0);
+			th_errouts(data->arg_vector[1]);
+			th_errouts("\n");
+			return (1);
+		}
+		data->error_no = check_exit;
+		return (-2);
+	}
+	data->error_no = -1;
+	return (-2);
+}
+
+/**
+ * th_history - cli history
+ * @data: data
+ * Return: 0
+ */
+int th_history(data_t *data)
+{
+	th_printl(data->his);
+	return (0);
+}

@@ -22,6 +22,7 @@
 
 #define TAB "\t"
 
+#define EXIT_ERROR_0 "Invalid exit status\n"
 #define ARG_ERROR0 "Argument not found \n"
 #define ARG_ERROR1 "Invalid number of arguments\n"
 
@@ -172,6 +173,8 @@ int th_isatty(int fd);
 int th_isalpha(int c);
 int th_is_exec(data_t *data, char *pth_ad);
 int th_isDelimeter(char c, char *delimeter);
+void th_can_chcont(data_t *data, char *arrays,
+size_t *current_index, size_t start, size_t alen);
 int th_putchar(char c);
 void th_puts(char *str);
 void th_perror(data_t *data, char *errmsg);
@@ -190,6 +193,9 @@ int th_var_r(data_t *data);
 size_t th_llen(const list_t *first);
 size_t th_printls(const list_t *first);
 list_t *th_nde_add(list_t **head_nd, const char *str, int nn);
+char **th_ltos(list_t *head_nd);
+int th_ndi_del(list_t **head_nd, unsigned int i);
+
 list_t *th_ndFirst(list_t *nd, char *pre, char ch);
 char **th_ltos(list_t *head_nd);
 int th_ndi_del(list_t **head_nd, unsigned int i);
@@ -209,4 +215,6 @@ void th_freel(list_t **head_nd);
 char *get_history_file(data_t *data);
 int th_history_index(data_t *data);
 int th_ch_process_dir(data_t *data);
+int th_alias(data_t *data);
+
 #endif
