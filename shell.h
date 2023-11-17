@@ -152,11 +152,11 @@ typedef struct th_data_pass
  * @f: first files
  * Return: Void
  */
-typedef struct builtin
+typedef struct builtin_table
 {
 	char *t;
 	int (*f)(data_t *);
-} inbuilt_t;
+}builtin_t;
 /*PROTOTYPES*/
 
 char *th_strcpy(char *to, char *from);
