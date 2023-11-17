@@ -19,6 +19,8 @@
 #define GETCWD_FAIL "failed to get current working dir!!\n"
 #define NOT_FOUND_MSG "Not found"
 #define PROCESS_ERROR "Process failed!!\n"
+#define PROCESS_ERROR_1 "permission denied\n"
+
 
 #define TAB "\t"
 
