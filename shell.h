@@ -16,7 +16,9 @@
 #define WRITE_BUFFER 512
 #define FREE_BUFFER -1
 
+#define GETCWD_FAIL "failed to get current working dir!!\n"
 #define NOT_FOUND_MSG "Not found"
+#define PROCESS_ERROR "Process failed!!\n"
 
 #define TAB "\t"
 
@@ -172,6 +174,7 @@ int th_is_exec(data_t *data, char *pth_ad);
 int th_isDelimeter(char c, char *delimeter);
 int th_putchar(char c);
 void th_puts(char *str);
+void th_perror(data_t *data, char *errmsg);
 int th_erroutc(char c);
 void th_errouts(char *str);
 int th_err_atoi(char *s);
@@ -205,5 +208,5 @@ int th_history_w(data_t *data);
 void th_freel(list_t **head_nd);
 char *get_history_file(data_t *data);
 int th_history_index(data_t *data);
-
+int th_ch_process_dir(data_t *data);
 #endif
