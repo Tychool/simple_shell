@@ -17,10 +17,10 @@ void welcome(void)
 	if (tm_info->tm_hour < 12)
 		th_puts("Good morning\n");
 	else if (tm_info->tm_hour < 18)
-		th_puts("GOod afternoon");
+		th_puts("Good afternoon");
 	else
 		th_puts("Good evening");
-	
+
 	for (int i = 0; i < 49; i++)
 	{
 		th_putchar('-');

@@ -38,6 +38,7 @@ int th_printas(list_t *nd)
 	if (nd)
 	{
 		char *alias_ptr = th_strchr(nd->str, '=');
+
 		th_puts("'");
 		for (char *alias_str = nd->str; alias_str <= alias_ptr;
 		th_putchar(*alias_str++))
@@ -53,7 +54,7 @@ int th_printas(list_t *nd)
  * th_aliastostr - set alias to strings
  * @data: data
  * @str: strings
- * @Return: 0
+ * Return: 0
  */
 int th_aliastostr(data_t *data, char *str)
 {
@@ -67,6 +68,7 @@ int th_aliastostr(data_t *data, char *str)
 /**
  * th_init_aliastostr - initialise setting alias to string
  * @data: data
+ * @str: string
  * Return: 0
  */
 int th_init_aliastostr(data_t *data, char *str)
@@ -76,6 +78,7 @@ int th_init_aliastostr(data_t *data, char *str)
 	if (!equals)
 		return (1);
 	char saved_char = equals[1];
+
 	equals[1] = '\0';
 
 	int init = th_ndi_del(&(data->alias), th_ndi_get(data->alias,

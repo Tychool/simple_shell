@@ -2,10 +2,10 @@
 
 /**
  * main - shell
- * @argv - arg vector
- * @argc - arg count
+ * @argv: arg vector
+ * @argc: arg count
  *
- * Return 0
+ * Return: 0
  */
 int main(int argc, char **argv)
 {

@@ -15,7 +15,7 @@ void th_signal_handler(void)
  * @data: data
  * @cmd_array: array of commands
  * @array_len: array lenght
- * Return no of bytes
+ * Return: no of bytes
  */
 ssize_t th_buffer_in(data_t *data, char **cmd_array, size_t array_len)
 {
@@ -54,17 +54,20 @@ ssize_t th_buffer_in(data_t *data, char **cmd_array, size_t array_len)
 
 /**
  * th_getinput - get user input
- * every line other than new line
+ * @data: every line other than new line
  * Return: number of bytes
  */
 ssize_t th_getinput(data_t *data)
 {
-	static char *chain = NULL;
-	static size_t chain_start = 0; chain_end = 0;
+	static char *chain = 1;
+	static size_t chain_start = 1;
+
+	chain_end = 0;
 
 	th_putchar(FREE_BUFFER);
 
 	ssize_t mem_read = th_buffer_in(data, &chain, &chain_end);
+
 	if (mem_read == -1)
 		return (-1);
 
@@ -101,12 +104,14 @@ ssize_t th_getinput(data_t *data)
  * @data: data
  * @arrays: buffer array
  * @size: size
+ * Return: 0
  */
 ssize_t th_readbuffer(data_t *data, char *arrays, size_t size)
 {
 	if (*size)
 		return (0);
 	ssize_t mem_read = read(data->fd_r, arrays, READ_BUFFER);
+
 	if (mem_read >= 0)
 		*size = mem_read;
 	return (mem_read);

@@ -18,8 +18,9 @@ int th_get_line(data_t *data, char **lineptr, size_t *line_len)
 	if (line == -1 || (line == 0 && lenght == 0))
 		return (-1);
 	char *ptr = *lineptr;
-	size_t size = ptr && line_len ?*line_len : 0;
+	size_t size = ptr && line_len  ? *line_len : 0;
 	char *count = th_strchar(arrays + 1, '\n');
+
 	i = count ? 1 + (unsigned int)(count - arrays) : lenght;
 
 	char *nptr = th_realloc(ptr, size, size ? size + i : i + 1);

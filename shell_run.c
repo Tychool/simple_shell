@@ -2,7 +2,7 @@
 
 /**
  * th_shellrun - run the shell
- * data: data
+ * @data: data
  * @argv: arg vector
  * Return: 0
  */
@@ -16,7 +16,7 @@ int th_shellrun(data_t *data, char **argv)
 		if (th_is_inter(data))
 			th_puts("$ ");
 		th_erroutc(FREE_BUFFER);
-		
+
 		if (th_setdata(data, argv) == -1)
 		{
 			srun = th_find_cmd(data);
@@ -32,6 +32,6 @@ int th_shellrun(data_t *data, char **argv)
 		exit(data->cmd_stat);
 	if (srun == -2)
 		exit((data->error_no == -1) ?
-		data->cmd_stat : data-> error_no);
+		data->cmd_stat : data->error_no);
 	return (srun);
 }

@@ -81,7 +81,7 @@ void th_cmdPTH(data_t *data)
 		data->current_line = 0;
 	}
 	int count = 0;
-	
+
 	for (int i = 0; data->arguments[i]; i++)
 	{
 		if (!th_isDelimeter(data->arguments[i], "\n"))
@@ -89,7 +89,8 @@ void th_cmdPTH(data_t *data)
 	}
 	if (!count)
 		return;
-	cmd_pth = th_pathfinder(data, th_env_value(data, PATH"="), data->arg_vector[0]);
+	cmd_pth = th_pathfinder(data, th_env_value(data, PATH"="),
+			data->arg_vector[0]);
 
 	if (cmd_pth)
 	{
@@ -98,7 +99,7 @@ void th_cmdPTH(data_t *data)
 	}
 	else
 	{
-		if ((th_is_inter(data) ||th_env_value(data,
+		if ((th_is_inter(data) || th_env_value(data,
 		"PATH=") || data->arg_vector[0][0] == '/')
 		&& th_is_exec(data, data->arg_vector[0]))
 			th_fork(data);

@@ -48,7 +48,7 @@ int th_ch_dir(data_t *data)
 		process_dir = data->arg_vector[1];
 
 	change_pdir = chdir(process_dir);
-	
+
 	if (change_pdir == -1)
 	{
 		th_perror(data, PROCESS_ERROR);

@@ -29,7 +29,7 @@ list_t *th_ndb_add(list_t head_nd, const char *str, int nn)
 			return (NULL);
 		}
 	}
-	new_h-> = *head_nd;
+	new_h->str = *head_nd;
 	*head_nd = new_h;
 	return (new_h);
 }
