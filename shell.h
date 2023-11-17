@@ -146,7 +146,12 @@ typedef struct th_data_pass
 	.cmd_ = 0, \
 	.buffer_t = 0,\
 }
-
+/**
+ * struct builtin - files
+ * @t: to files
+ * @f: first files
+ * Return: Void
+ */
 typedef struct builtin
 {
 	char *t;

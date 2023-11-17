@@ -104,5 +104,5 @@ int th_env_del(data_t *data)
 	}
 	for (int i = 1; i < data->arg_count; i++)
 		th_unset_env(data, data->arg_vector[i]);
-	return(0);
+	return (0);
 }

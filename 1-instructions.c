@@ -33,7 +33,8 @@ char *th_pathfinder(data_t *data, char *pth, char *command)
 {
 	if (!pth || !th_strlen(command))
 		return (NULL);
-	if (th_strlen(command) > 2 && th_firstletter(command, "./") && th_is_exec(data, command))
+	if (th_strlen(command) > 2 && th_firstletter(command, "./")
+			&& th_is_exec(data, command))
 		return (command);
 	int indx, cur_indx = 0;
 
@@ -42,6 +43,7 @@ char *th_pathfinder(data_t *data, char *pth, char *command)
 		if (pth[indx] == ':')
 		{
 			char *current_path = th_chars_dup(pth, cur_indx, indx);
+
 			th_strcat(current_path, *current_path ? "/" : "");
 			th_strcat(current_path, command);
 

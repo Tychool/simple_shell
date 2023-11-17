@@ -13,6 +13,7 @@ int th_history_w(data_t *data)
 		return (-1);
 
 	int fd = open(file, O_CREAT | O_TRUNC | O_RDWR, 0644);
+
 	free(file);
 
 	if (fd == -1)

@@ -82,12 +82,14 @@ int th_history_rd(data_t *data)
 	}
 
 	free(file);
-	if (!fstat(fd, &st) || (filesize = st.st_size) < 2 || (arrays = malloc(filesize + 1)) == NULL)
+	if (!fstat(fd, &st) || (filesize = st.st_size) < 2 ||
+			(arrays = malloc(filesize + 1)) == NULL)
 		return (close(fd), 0);
 	ssize_t llen = read(fd, arrays, filesize);
+
 	close(fd);
 
-	if (llen <=0)
+	if (llen <= 0)
 	{
 		return (free(arrays), 0);
 	}
@@ -111,5 +113,5 @@ int th_history_rd(data_t *data)
 		th_ndi_del(&(data->his), 0);
 
 	th_history_index(data);
-	return(data->his_line);
+	return (data->his_line);
 }

@@ -3,7 +3,7 @@
 /**
  * th_init_env - initialize enviroment var
  * @data: data
- * Return 0
+ * Return: 0
  */
 int th_init_env(data_t *data)
 {
@@ -30,7 +30,7 @@ return (0);
 /**
  * th_env_value - fetch enviroment value
  * @data: data
- * var_name: name of enviroment var
+ * @var_name: name of enviroment var
  * Return: env value
  */
 char *th_env_value(data_t *data, const char *var_name)
@@ -38,6 +38,7 @@ char *th_env_value(data_t *data, const char *var_name)
 	for (list_t *nd = data->env_cp; nd; nd = nd->nxt)
 	{
 		char *e_val = th_firstletter(nd->str, var_name);
+
 		if (e_val && *e_val)
 			return (e_val);
 	}

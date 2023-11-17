@@ -105,12 +105,12 @@ int th_var_overwrite(data_t *data)
 			if (!th_strcmp(data->arg_vector[i], "$?"))
 			{
 				th_str_overwrite(&(data->arg_vector[i]),
-			th_strdup(th_itoa(data->cmd_stat, 10,0)));
+			th_strdup(th_itoa(data->cmd_stat, 10, 0)));
 			}
 			else if (th_strcmp(data->arg_vector[i], "$$") == '\0')
 			{
 				th_str_overwrite(&(data->arg_vector[i]),
-				th_strdup(th_itoa(getpid(), 10,0)));
+				th_strdup(th_itoa(getpid(), 10, 0)));
 			}
 			else if ((nd = th_ndFirst(data->env_cp,
 				&data->arg_vector[i][1], '=')))
