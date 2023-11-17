@@ -22,7 +22,6 @@ int th_isalpha(int c)
 	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
 
-#include "shell.h"
 
 /**
  * th_is_exec - check if file path contains executables

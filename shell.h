@@ -129,7 +129,7 @@ typedef struct th_data_pass
 	.arg_vector = NULL, \
 	.pth_ad = NULL, \
 	.curr_line = 0, \
-	.rror_index = 0,\
+	.error_index = 0,\
 	.error_no = 0, \
 	.his = NULL, \
 	.his_line = 0, \
