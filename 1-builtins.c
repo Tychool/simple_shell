@@ -33,12 +33,12 @@ int th_ch_dir(data_t *data)
 
 	if (!data->arg_vector[1])
 	{
-		process_dir = th_env_value(data, "HOME = ")
-		?: th_env_value(data, "PWD = ");
+		process_dir = th_env_value(data, "HOME=")
+		?: th_env_value(data, "PWD=");
 	}
 	else if (th_strcmp(data->arg_vector[1], "-") == 0)
 	{
-		if (!(oldpwd = th_env_value(data, "OLDPWD = ")))
+		if (!(oldpwd = th_env_value(data, "OLDPWD=")))
 		{
 			th_puts(getcwd(NULL, 0));
 			th_puts("\n");
@@ -60,7 +60,7 @@ int th_ch_dir(data_t *data)
 	else
 	{
 		th_set_env(data, "OLDPWD", oldpwd ?:
-		th_env_value(data, "PWD = "));
+		th_env_value(data, "PWD="));
 		th_set_env(data, "PWD", getcwd(NULL, 0));
 		free(oldpwd);
 	}
