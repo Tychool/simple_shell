@@ -22,28 +22,6 @@ int th_isalpha(int c)
 	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
 
-
-/**
- * th_is_exec - check if file path contains executables
- * @data: structure (unused)
- * @pth_ad: path to the file
- *
- * Return: 1 if true, 0 otherwise
- */
-int th_is_exec(data_t *data, char *pth_ad)
-{
-struct stat st;
-
-(void)data;  /*Unused*/
-
-if (pth_ad && stat(pth_ad, &st) == 0 && S_ISREG(st.st_mode))
-{
-	return (1);  /*File is a regular file (executable)*/
-}
-
-return (0);  /*Not an executable command*/
-}
-
 /**
  * th_isDelimeter - check a character and determine
  * if it's a delimeter

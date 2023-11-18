@@ -41,11 +41,13 @@ size_t th_llen(const list_t *first)
  */
 size_t th_print_l(const list_t *first)
 {
-	for (size_t i = 0; first; i++, first = first->nxt)
+	size_t i;
+
+	for (i = 0; first; i++, first = first->nxt)
 	{
 		th_puts(th_itoa(first->nn, 10, 0));
 		th_puts(": ");
-		(first->str != NULL) th_puts(first->str) : th_puts(NOT_FOUND_MSG);
+		(first->str != NULL) ? th_puts(first->str) : th_puts(NOT_FOUND_MSG);
 	}
 	return (i);
 }

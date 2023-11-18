@@ -216,7 +216,6 @@ int th_putsfile_d(char *str, int file_d);
 /*0-para*/
 int th_isatty(int fd);
 int th_isalpha(int c);
-int th_is_exec(data_t *data, char *pth_ad);
 int th_isDelimeter(char c, char *delimeter);
 
 /*0-str*/
@@ -256,7 +255,7 @@ void th_cmd_find(data_t *data);
 
 /*1-param*/
 int th_is_inter(data_t *data);
-int th_iscommand(data_t *data, char *pth_ad);
+int th_is_exec(data_t *data, char *pth_ad);
 int th_iscmd_c(data_t *data, char *arrays, size_t *current_index);
 void th_can_chcont(data_t *data, char *arrays,
 	size_t *current_index, size_t start, size_t alen);

@@ -20,9 +20,11 @@ int th_is_inter(data_t *data)
  *
  * Return: 1 if its a command, 0 if not
  */
-int th_iscommand(data_t *data, char *pth_ad)
+int th_is_exec(data_t *data, char *pth_ad)
 {
 	struct stat cmd_st;
+
+	(void)data;
 
 	return (pth_ad == NULL || stat(pth_ad, &cmd_st)
 	? 0 : (cmd_st.st_mode & S_IFREG));
