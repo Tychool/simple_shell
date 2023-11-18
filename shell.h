@@ -233,7 +233,7 @@ int th_history(data_t *data);
 void th_perror(data_t *data, char *errmsg);
 
 /*1-lists*/
-list_t *th_ndb_add(list_t head_nd, const char *str, int nn);
+/*list_t *th_ndb_add(list_t head_nd, const char *str, int nn);*/
 ssize_t th_ndi_get(list_t *head_nd, list_t *nd);
 size_t th_llen(const list_t *first);
 size_t th_print_l(const list_t *first);
@@ -272,7 +272,7 @@ char **th_tok_strtowd(char *st, char del_st);
 list_t *th_ndFirst(list_t *nd, char *pre, char ch);
 char **th_ltos(list_t *head_nd);
 list_t *th_nde_add(list_t **head_nd, const char *str, int nn);
-list_t *th_ndb_add(list_t **head_nd, const char *str, int nn);
+list_t *th_ndb_add(list_t **head_nd,iconst char *str, int nn);
 
 /*3-str*/
 char *th_strncpy(char *to, char *from, int n);

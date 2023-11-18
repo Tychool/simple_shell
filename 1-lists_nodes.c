@@ -1,40 +1,6 @@
 #include "shell.h"
 
 /**
- * th_ndb_add - add a node at the begining of list
- *
- * @head_nd: head
- * @str: same for all list_t
- * @nn: same
- *
- * Return: same for all list function
- */
-list_t *th_ndb_add(list_t head_nd, const char *str, int nn)
-{
-	if (head_nd == NULL)
-		return (NULL);
-	list_t new = maloc(sizeof(list_t));
-
-	if (new_h == NULL)
-		return (NULL);
-	th_memset(new_h, 0, sizeof(list_t));
-	new_h->nn = nn;
-
-	if (str != NULL)
-	{
-		new_h->str = th_strdup(str);
-		if (new_h->str == NULL)
-		{
-			free(new_h);
-			return (NULL);
-		}
-	}
-	new_h->str = *head_nd;
-	*head_nd = new_h;
-	return (new_h);
-}
-
-/**
  * th_ndi_get - get list's node index
  *
  * @head_nd: head
