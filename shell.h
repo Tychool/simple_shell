@@ -11,6 +11,8 @@
 #include <unistd.h>
 #include <strings.h>
 #include <stdlib.h>
+#include <stddef.h>
+#include <stdint.h>
 
 #define READ_BUFFER 512
 #define WRITE_BUFFER 512
@@ -263,6 +265,7 @@ void th_can_chcont(data_t *data, char *arrays,
 char *th_firstLetter(const char *haystack, const char *needle);
 char *th_strcat(char *to, char *from);
 int th_stoi(char *s);
+int th_str_overwrite(char **oldstr, char *newstr);
 
 /*2-str*/
 char **th_tok_strtow(char *st, char *del_st);
@@ -272,7 +275,7 @@ char **th_tok_strtowd(char *st, char del_st);
 list_t *th_ndFirst(list_t *nd, char *pre, char ch);
 char **th_ltos(list_t *head_nd);
 list_t *th_nde_add(list_t **head_nd, const char *str, int nn);
-list_t *th_ndb_add(list_t **head_nd,iconst char *str, int nn);
+list_t *th_ndb_add(list_t **head_nd, const char *str, int nn);
 
 /*3-str*/
 char *th_strncpy(char *to, char *from, int n);

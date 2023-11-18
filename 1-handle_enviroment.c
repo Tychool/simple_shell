@@ -37,7 +37,7 @@ char *th_env_value(data_t *data, const char *var_name)
 {
 	for (list_t *nd = data->env_cp; nd; nd = nd->nxt)
 	{
-		char *e_val = th_firstletter(nd->str, var_name);
+		char *e_val = th_firstLetter(nd->str, var_name);
 
 		if (e_val && *e_val)
 			return (e_val);

@@ -9,7 +9,9 @@
  */
 int th_ch_process_dir(data_t *data)
 {
+	
 	th_puts("PROCESSING_0");
+	th_puts((void *) data);
 	return (0);
 }
 
@@ -99,6 +101,6 @@ int th_exit(data_t *data)
  */
 int th_history(data_t *data)
 {
-	th_printl(data->his);
+	th_print_l(data->his);
 	return (0);
 }

@@ -23,7 +23,7 @@ int th_set_env(data_t *data, char *variable, char *env_value)
 
 	list_t *nd = data->env_cp;
 
-	while (nd && !(th_firstletter(nd->str, variable)
+	while (nd && !(th_firstLetter(nd->str, variable)
 	&& nd->str[th_strlen(variable)] == '='))
 		nd = nd->nxt;
 
@@ -72,7 +72,7 @@ int th_unset_env(data_t *data, char *variable)
 
 	while (current_nd)
 	{
-		prop_match = th_firstletter(current_nd->str, variable);
+		prop_match = th_firstLetter(current_nd->str, variable);
 		if (prop_match != NULL && *prop_match == '=')
 		{
 			data->env_ch = th_ndi_del(&(data->env_cp), nd_indx);

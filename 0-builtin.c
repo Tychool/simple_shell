@@ -19,9 +19,9 @@ int th_alias(data_t *data)
 	}
 	for (i = 1; data->arg_vector[i]; i++)
 	{
-		alias_ptr = th_strchr(data->arg_vector[i]);
+		alias_ptr = th_strchr(data->arg_vector[i], '=');
 		if (alias_ptr)
-			th_set_alias(data, data->arg_vector[i]);
+			th_aliastostr(data, data->arg_vector[i]);
 		else
 			th_printas(th_ndFirst(data->alias, data->arg_vector[i], '='));
 	}

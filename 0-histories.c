@@ -70,10 +70,13 @@ int th_history_index(data_t *data)
  */
 int th_history_rd(data_t *data)
 {
-	int fd, end, line = 0;
+	int i, end;
+	int line = 0;
 	char *arrays = NULL;
 	char *file = th_history_pth(data);
-	size_t filesize;
+	ssize_t filesize = 0;
+	ssize_t fd, llen;
+
 	struct stat st;
 
 	if (file == NULL || (fd = open(file, O_RDONLY)) == -1)
@@ -85,7 +88,7 @@ int th_history_rd(data_t *data)
 	if (!fstat(fd, &st) || (filesize = st.st_size) < 2 ||
 			(arrays = malloc(filesize + 1)) == NULL)
 		return (close(fd), 0);
-	ssize_t llen = read(fd, arrays, filesize);
+	llen = read(fd, arrays, filesize);
 
 	close(fd);
 
@@ -94,7 +97,7 @@ int th_history_rd(data_t *data)
 		return (free(arrays), 0);
 	}
 	arrays[filesize] = 0;
-	for (int i = 0, end = 0; i < filesize; i++)
+	for ( i = 0, end = 0; i < filesize; i++)
 	{
 		if (arrays[i] == '\n')
 		{

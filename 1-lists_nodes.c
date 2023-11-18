@@ -14,10 +14,10 @@ ssize_t th_ndi_get(list_t *head_nd, list_t *nd)
 
 	while (head_nd != NULL && head_nd != nd)
 	{
-		head_nd = head_nd->next;
+		head_nd = head_nd->nxt;
 		i++;
 	}
-	return (head_nd == nd ? i : -1);
+	return (head_nd == nd ? i : SIZE_MAX);
 }
 
 /**
@@ -27,8 +27,10 @@ ssize_t th_ndi_get(list_t *head_nd, list_t *nd)
  */
 size_t th_llen(const list_t *first)
 {
-	for (size_t indx = 0; first; indx++, first = first->nxt)
+	size_t indx;
+	for (indx = 0; first; indx++, first = first->nxt)
 		;
+
 	return (indx);
 }
 
@@ -41,10 +43,9 @@ size_t th_print_l(const list_t *first)
 {
 	for (size_t i = 0; first; i++, first = first->nxt)
 	{
-		th_puts(th_itoa(first->, 10, 0));
+		th_puts(th_itoa(first->nn, 10, 0));
 		th_puts(": ");
-		(first->str != NULL) th_puts(firsy->str) : th_puts("Not found!");
-		th_puts("\n");
+		(first->str != NULL) th_puts(first->str) : th_puts(NOT_FOUND_MSG);
 	}
 	return (i);
 }

@@ -77,7 +77,7 @@ for (indx = 0; indx < 10; indx++)
 		return (0);
 	}
 	free(data->arg_vector[0]);
-	data->arg_vector[0] = th_strdup(th_strchar(nd->str, '=') + 1);
+	data->arg_vector[0] = th_strdup(th_strchr(nd->str, '=') + 1);
 
 	if (!data->arg_vector[0])
 
@@ -116,7 +116,7 @@ int th_var_overwrite(data_t *data)
 				&data->arg_vector[i][1], '=')))
 			{
 				th_str_overwrite(&(data->arg_vector[i]),
-				th_strdup(th_strchar(nd->str, '=')));
+				th_strdup(th_strchr(nd->str, '=')));
 			}
 			else
 			th_str_overwrite(&data->arg_vector[i], th_strdup(""));

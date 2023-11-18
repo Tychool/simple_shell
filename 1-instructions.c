@@ -33,7 +33,7 @@ char *th_pathfinder(data_t *data, char *pth, char *command)
 {
 	if (!pth || !th_strlen(command))
 		return (NULL);
-	if (th_strlen(command) > 2 && th_firstletter(command, "./")
+	if (th_strlen(command) > 2 && th_firstLetter(command, "./")
 			&& th_is_exec(data, command))
 		return (command);
 	int indx, cur_indx = 0;
@@ -54,17 +54,3 @@ char *th_pathfinder(data_t *data, char *pth, char *command)
 	}
 	return (NULL);
 }
-
-/**
- * th_cmd_find - look for command in path
- * @data: data
- * Return: no
- */
-void th_cmd_find(data_t *data)
-{
-	int count_non_del = 0;
-	char *paths;
-
-	data->pth_ad = data->arg_vector[0];
-
-	if (data->

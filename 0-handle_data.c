@@ -20,7 +20,7 @@ void th_setdata(data_t *data, char **argv)
 		if (data->arg_vector)
 		{
 			th_aliasreplace(data);
-			th_var_r(data);
+			th_var_overwrite(data);
 		}
 	}
 }
