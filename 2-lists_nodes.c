@@ -10,13 +10,14 @@
  */
 list_t *th_ndFirst(list_t *nd, char *pre, char ch)
 {
-	while (nd && !(th_firstletter(nd->str, pre) &&
+	while (nd && !(th_firstLetter(nd->str, pre) &&
 	(ch == -1 || nd->str[th_strlen(pre)] == ch)))
 	{
 		nd = nd->nxt;
 	}
 	return (nd);
 }
+
 
 /**
  * th_ltos - convert list to strings

@@ -68,6 +68,7 @@ int th_iscmd_c(data_t *data, char *arrays, size_t *current_index)
 		return (0);
 	}
 	*current_index = current_position;
+	return (1);
 }
 
 /**
