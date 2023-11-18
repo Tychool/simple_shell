@@ -109,7 +109,7 @@ typedef struct th_data_pass
 	char **arg_vector;
 	/*PATHS*/
 	char *pth_ad;
-	int curr_line;
+	int current_line;
 	/*ERROR*/
 	unsigned int error_index;
 	int error_no;
@@ -135,7 +135,7 @@ typedef struct th_data_pass
 	.arguments = NULL, \
 	.arg_vector = NULL, \
 	.pth_ad = NULL, \
-	.curr_line = 0, \
+	.current_line = 0, \
 	.error_index = 0,\
 	.error_no = 0, \
 	.his = NULL, \
@@ -147,7 +147,7 @@ typedef struct th_data_pass
 	.name = NULL, \
 	.cmd_buffer = NULL, \
 	.fd_r = 0, \
-	.cmd_ = 0, \
+	.cmd_stat = 0, \
 	.buffer_t = 0,\
 }
 /**
@@ -283,10 +283,10 @@ char *th_strchr(char *s, char c);
 size_t th_str_cnt(const char *str);
 
 /*getline_u*/
-void th_signal_handler(void);
-ssize_t th_buffer_in(data_t *data, char **cmd_array, size_t array_len);
+void th_signal_handler(int no);
+ssize_t th_buffer_in(data_t *data, char **cmd_array, size_t *array_len);
 ssize_t th_getinput(data_t *data);
-ssize_t th_readbuffer(data_t *data, char *arrays, size_t size);
+ssize_t th_readbuffer(data_t *data, char *arrays, size_t *size);
 
 /*main.c*/
 int main(int argc, char **argv);

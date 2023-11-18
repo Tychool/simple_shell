@@ -9,10 +9,10 @@
  */
 int main(int argc, char **argv)
 {
-	welcome();
+	/*welcome();*/
 
 	int fd = 2;
-	data_t data[] = {INIT_DATA};
+	data_t data[] = {INIT_DATA_T};
 
 	fd = open(argc == 2 ? argv[1] : "dev/null", O_RDONLY);
 	if (fd == -1)

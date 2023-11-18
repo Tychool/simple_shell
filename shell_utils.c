@@ -7,27 +7,29 @@
  */
 int th_findcmd(data_t *data)
 {
-	builtin_t table = {
+	int i, b_cmd = FREE_BUFFER;
+
+	builtin_t table[] = {
 		{"env", th_print_env},
 		{"help", th_ch_process_dir},
 		{"history", th_history},
 		{"setenv", th_init_env},
 		{"unsetenv", th_env_del},
-		{"exit", th_exit_shell},
+		{"exit", th_exit},
 		{"cd", th_ch_dir},
 		{"alias", th_alias},
 		{NULL, NULL}
 	};
 
-	for (int i = 0, table[i].t; i++)
+	for (i = 0; table[i].t; i++)
 	{
-		if (th_strcmp(data->arg_vector[0], table.t) == 0)
+		if (th_strcmp(data->arg_vector[0], table[i].t) == 0)
 		{
 			data->error_index++;
-			int b_cmd = table[i].f(data);
+			b_cmd = table[i].f(data);
 		}
 	}
-	return (-1);
+	return (b_cmd);
 }
 
 /**
@@ -56,7 +58,7 @@ void th_fork(data_t *data)
 	{
 		wait(&(data->cmd_stat));
 
-		if (WIFEXITED(data->cmd_status))
+		if (WIFEXITED(data->cmd_stat))
 		{
 			data->cmd_stat = WEXITSTATUS(data->cmd_stat);
 			if (data->cmd_stat == 126)
@@ -89,7 +91,7 @@ void th_cmdPTH(data_t *data)
 	}
 	if (!count)
 		return;
-	cmd_pth = th_pathfinder(data, th_env_value(data, PATH"="),
+	cmd_pth = th_pathfinder(data, th_env_value(data, "PATH="),
 			data->arg_vector[0]);
 
 	if (cmd_pth)
