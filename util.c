@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * th_exitt - exits the shell
+ * th_exit_sh - exits the shell
  * @av: array of args
  */
 void th_exit_sh(char **av)
