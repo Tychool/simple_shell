@@ -5,12 +5,12 @@
  * @head: head node of path dir list
  * Return: pathname or NULL if not found
  */
-char *th_which(char *filename, th_list_path *head)
+char *th_which(char *filename, thlist_path *head)
 {
     char *string;
     struct stat st;
 
-    th_list_path *tmp = head;
+    thlist_path *tmp = head;
 
     while (tmp)
     {
@@ -30,9 +30,9 @@ char *th_which(char *filename, th_list_path *head)
  * th_free_list - frees a list
  * @head: pointer to list
  */
-void th_free_list(th_list_path *head)
+void th_free_list(thlist_path *head)
 {
-    th_list_path *mem;
+    thlist_path *mem;
 
     while (head)
     {
