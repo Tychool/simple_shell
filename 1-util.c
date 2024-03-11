@@ -44,6 +44,19 @@ void th_free_list(thlist_path *head)
 }
 
 /**
+ * freearv - free array of args
+ * @av: array of args
+ */
+void th_freearv(char **av)
+{
+    int i;
+
+    for (i = 0; av[i]; i++)
+        free(av[i]);
+    free(av);
+}
+
+/**
  * th_linkpath - generate a linked list of path directories
  * @path: array of paths by ':'
  * Return: pointer to list
