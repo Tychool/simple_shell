@@ -14,10 +14,10 @@
 
 extern char **environ;
 
-typedef struct list_path
+typedef struct thlist_path
 {
-    char *dir;
-    struct list_path *p;
+    char *dir_name;
+    struct list_path *pth_name;
 } list_path;
 
 char *th_which(char *filename, list_path *head);
