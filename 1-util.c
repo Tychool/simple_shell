@@ -48,7 +48,7 @@ void th_free_list(thlist_path *head)
  * @path: array of paths by ':'
  * Return: pointer to list
  */
-list_path *th_linkpath(char *path)
+thlist_path *th_linkpath(char *path)
 {
     thlist_path *head = '\0';
     char *path_cue = th_strdup(path);
