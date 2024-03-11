@@ -17,12 +17,12 @@ extern char **environ;
 typedef struct thlist_path
 {
     char *dir_name;
-    struct list_path *pth_name;
-} list_path;
+    struct thlist_path *pth_name;
+} thlist_path;
 
-char *th_which(char *filename, list_path *head);
+char *th_which(char *filename, thlist_path *head);
 char *th_getenv(const char *name);
-list_path *th_add_node_end(list_path **head, char *str);
+list_path *th_add_node_end(thlist_path **head, char *str);
 list_path *th_linkpath(char *path);
 
 typedef struct thbuild
@@ -39,7 +39,7 @@ void th_setenv(char **av);
 void th_unsetenv(char **av);
 
 void th_free_av(char **av);
-void th_free_list(list_path *head);
+void th_free_list(thlist_path *head);
 int th_putchar(char c);
 void th_puts(char *str);
 int th_strlen(char *s);
