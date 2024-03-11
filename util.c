@@ -83,46 +83,6 @@ void (*th_checkbuild(char **av))(char **av)
 }
 
 /**
- * th_add_node_end - adds a new node at the end of a list_path list
- * @head: pointer to pointer to our linked list
- * @str: pointer to string in previous first node
- * Return: address of the new element/node
- */
-list_path *th_add_node_end(list_path **head, char *str)
-{
-    list_path *tmp;
-    list_path *new;
-
-    new = malloc(sizeof(list_path));
-
-    if (!new || !str)
-    {
-        return (NULL);
-    }
-
-    new->dir = str;
-
-    new->p = '\0';
-    if (!*head)
-    {
-        *head = new;
-    }
-    else
-    {
-        tmp = *head;
-
-        while (tmp->p)
-        {
-            tmp = tmp->p;
-        }
-
-        tmp->p = new;
-    }
-
-    return (*head);
-}
-
-/**
  * th_add_node_end - add node to the end of a list
  * @head: pointer to a pointer to a linked list
  * @str: pointer previous node
