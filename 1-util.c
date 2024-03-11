@@ -42,3 +42,23 @@ void th_free_list(thlist_path *head)
         head = mem;
     }
 }
+
+/**
+ * th_linkpath - generate a linked list of path directories
+ * @path: array of paths by ':'
+ * Return: pointer to list
+ */
+list_path *th_linkpath(char *path)
+{
+    thlist_path *head = '\0';
+    char *path_cue = th_strdup(path);
+    char *tok = strtok(path_cue, ":");
+    
+    while (tok)
+    {
+        head = th_add_node_end(&head, tok);
+        tok = strtok(NULL, ":");
+    }
+
+    return (head);
+}
