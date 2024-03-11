@@ -48,3 +48,36 @@ int th_atoi(char *s)
     }
     return (cnv_int);
 }
+
+/**
+ * th_checkbuild - check for builtin cmd
+ * @av: array of arguments
+ * Return: pointer to function (void fun(*av))
+ */
+void (*th_checkbuild(char **av))(char **av)
+{
+    int i, j;
+    thbuild T[] = {
+        {"exit", th_exit_sh},
+        {"env", th_env},
+        {"setenv", th_setenv},
+        {"unsetenv", th_unsetenv},
+        {NULL, NULL}
+    };
+
+    for (i = 0; T[i].name; i++)
+    {
+        j = 0;
+        if (T[i].name[j] == av[0][j])
+        {
+            for (j = 0; av[0][j]; j++)
+            {
+                if (T[i].name[j] != av[0][j])
+                    break;
+            }
+            if (!av[0][j])
+                return (T[i].func);
+        }
+    }
+    return (0);
+}
