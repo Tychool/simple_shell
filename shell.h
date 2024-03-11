@@ -31,9 +31,9 @@ typedef struct thbuild
     void (*func)(char **);
 } mybuild;
 
-void (*th_checkbuild(char **arv))(char **av);
+void (*th_checkbuild(char **av))(char **av);
 int th_atoi(char *s);
-void th_exitt(char **av);
+void th_exit_sh(char **av);
 void th_env(char **av);
 void th_setenv(char **av);
 void th_unsetenv(char **av);
