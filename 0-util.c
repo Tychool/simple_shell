@@ -88,12 +88,12 @@ void (*th_checkbuild(char **av))(char **av)
  * @str: pointer previous node
  * Return: pointer to the new node
  */
-list_path *th_add_node_end(list_path **head, char *str)
+thlist_path *th_add_node_end(thlist_path **head, char *str)
 {
     thlist_path *tmp;
     thlist_path *new;
 
-    new = malloc(sizeof(list_path));
+    new = malloc(sizeof(thlist_path));
 
     if (!new || !str)
     {
