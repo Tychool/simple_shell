@@ -2,7 +2,7 @@
 
 /**
  * th_exitt - exits the shell
- * @av: array of words of the entered line
+ * @av: array of args
  */
 void th_exit_sh(char **av)
 {
@@ -24,7 +24,7 @@ void th_exit_sh(char **av)
 
 /**
  * th_atoi - converts string to int
- * @s: pointer to a string
+ * @s: pointer to string
  * Return: the integer
  */
 int th_atoi(char *s)
