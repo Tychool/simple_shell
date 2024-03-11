@@ -81,3 +81,83 @@ void (*th_checkbuild(char **av))(char **av)
     }
     return (0);
 }
+
+/**
+ * th_add_node_end - adds a new node at the end of a list_path list
+ * @head: pointer to pointer to our linked list
+ * @str: pointer to string in previous first node
+ * Return: address of the new element/node
+ */
+list_path *th_add_node_end(list_path **head, char *str)
+{
+    list_path *tmp;
+    list_path *new;
+
+    new = malloc(sizeof(list_path));
+
+    if (!new || !str)
+    {
+        return (NULL);
+    }
+
+    new->dir = str;
+
+    new->p = '\0';
+    if (!*head)
+    {
+        *head = new;
+    }
+    else
+    {
+        tmp = *head;
+
+        while (tmp->p)
+        {
+            tmp = tmp->p;
+        }
+
+        tmp->p = new;
+    }
+
+    return (*head);
+}
+
+/**
+ * th_add_node_end - add node to the end of a list
+ * @head: pointer to a pointer to a linked list
+ * @str: pointer previous node
+ * Return: pointer to the new node
+ */
+list_path *th_add_node_end(list_path **head, char *str)
+{
+    thlist_path *tmp;
+    thlist_path *new;
+
+    new = malloc(sizeof(list_path));
+
+    if (!new || !str)
+    {
+        return (NULL);
+    }
+
+    new->dir_name = str;
+
+    new->pth_name = '\0';
+    if (!*head)
+    {
+        *head = new;
+    }
+    else
+    {
+        tmp = *head;
+
+        while (tmp->pth_name)
+        {
+            tmp = tmp->pth_name;
+        }
+
+        tmp->pth_name = new;
+    }
+
+    return (*head);
+}
