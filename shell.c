@@ -1,11 +1,12 @@
 int main(void)
 {
 	ssize_t len = 0;
-  size_t size = 0;
+  	size_t size = 0;
 	thlist_path *head = '\0';
-  char *buff = NULL, *value, *path_name, **av;
+	char *buff = NULL, *value, *path_name, **av;
 	void (*fun_sh)(char **);
 
+	printf("Welcome to shell by Tshepang and Hezekiahs\n");
 	signal(SIGINT, th_sig_handler);
 	while (len != EOF)
 	{
