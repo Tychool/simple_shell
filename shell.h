@@ -22,8 +22,8 @@ typedef struct thlist_path
 
 char *th_which(char *filename, thlist_path *head);
 char *th_getenv(const char *name);
-list_path *th_add_node_end(thlist_path **head, char *str);
-list_path *th_linkpath(char *path);
+thlist_path *th_add_node_end(thlist_path **head, char *str);
+thlist_path *th_linkpath(char *path);
 
 typedef struct thbuild
 {
