@@ -29,7 +29,7 @@ typedef struct thbuild
 {
     char *name;
     void (*func)(char **);
-} mybuild;
+} thbuild;
 
 void (*th_checkbuild(char **av))(char **av);
 int th_atoi(char *s);
