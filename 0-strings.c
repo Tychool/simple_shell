@@ -77,13 +77,13 @@ char *th_strdup(char *str)
 }
 
 /**
- * concat_all - concatenate all strings
+ * th_concat_all - concatenate all strings
  * @name: name
  * @sep: seperator
  * @value: value
  * Return: pointer to the new string
  */
-char *concat_all(char *name, char *sep, char *value)
+char *th_concat_all(char *name, char *sep, char *value)
 {
 	char *result;
 	int slen1, slen2, slen3, i, k;
