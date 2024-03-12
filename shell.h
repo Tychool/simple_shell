@@ -49,6 +49,8 @@ char *th_concat_all(char *name, char *sep, char *value);
 char **th_splitstring(char *str, const char *delim);
 void th_execute(char **argv);
 void *th_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-
+void th_isatty(void);
+void th_EOF(int len, char *buff);
+void th_sig_handler(int sig_num);
 
 #endif
