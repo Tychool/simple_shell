@@ -17,7 +17,7 @@ int main(void)
 		th_EOF(len, buff);
 		av = th_splitstring(buff, " \n");
 		if (!av || !av[0])
-			execute(av);
+			th_execute(av);
 		else
 		{
 			value = th_getenv("PATH");
@@ -30,12 +30,12 @@ int main(void)
 				fun_sh(av);
 			}
 			else if (!path_name)
-				execute(av);
+				th_execute(av);
 			else if (path_name)
 			{
 				free(av[0]);
 				av[0] = path_name;
-				execute(av);
+				th_execute(av);
 			}
 		}
 	}
