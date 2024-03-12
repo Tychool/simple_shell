@@ -20,6 +20,14 @@ typedef struct thlist_path
     struct thlist_path *pth_name;
 } thlist_path;
 
+void th_free_av(char **av);
+void th_free_list(thlist_path *head);
+int th_putchar(char c);
+void th_puts(char *str);
+int th_strlen(char *s);
+char *th_strdup(char *str);
+char *th_concat_all(char *name, char *sep, char *value);
+
 char *th_which(char *filename, thlist_path *head);
 char *th_getenv(const char *name);
 thlist_path *th_add_node_end(thlist_path **head, char *str);
