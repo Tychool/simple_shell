@@ -69,8 +69,8 @@ void *th_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 }
 
 /**
- * execute - executes a command
- * @argv: array of arguments
+ * th_execute - execute command
+ * @argv: array of args
  */
 
 void th_execute(char **argv)
