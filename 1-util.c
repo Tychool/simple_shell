@@ -44,10 +44,10 @@ void th_free_list(thlist_path *head)
 }
 
 /**
- * freearv - free array of args
+ * th_free_av - free array of args
  * @av: array of args
  */
-void th_freearv(char **av)
+void th_free_av(char **av)
 {
     int i;
 
