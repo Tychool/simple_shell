@@ -22,7 +22,7 @@ int main(void)
 		{
 			value = th_getenv("PATH");
 			head = th_linkpath(value);
-			path_name = th_which(arv[0], head);
+			path_name = th_which(av[0], head);
 			fun_sh = th_checkbuild(av);
 			if (fun_sh)
 			{
