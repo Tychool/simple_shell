@@ -24,7 +24,7 @@ int main(void)
 			head = th_linkpath(value);
 			path_name = th_which(arv[0], head);
 			fun_sh = th_checkbuild(av);
-			if (f)
+			if (fun_sh)
 			{
 				free(buff);
 				fun_sh(av);
