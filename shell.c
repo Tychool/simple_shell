@@ -1,3 +1,5 @@
+#include "shell.h"
+
 int main(void)
 {
 	ssize_t len = 0;
